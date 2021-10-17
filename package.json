@@ -1,0 +1,23 @@
+{
+  "name": "heisenberg",
+  "version": "1.0.0",
+  "description": "the brains of camp yellow reside in this repository",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx concurrently \"cd frontend && npm start\" \"cd backend && npm start\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arshxyz/heisenberg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arshxyz/heisenberg/issues"
+  },
+  "homepage": "https://github.com/arshxyz/heisenberg#readme",
+  "dependencies": {
+    "@material-ui/pickers": "^3.3.10"
+  }
+}
