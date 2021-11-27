@@ -61,30 +61,38 @@ app.get(
     successRedirect: "http://localhost:3000/",
   }),
   (req, res) => {
+    try{
     console.log("callback ", req.user);
-    res.send(req.user);
+    res.send(req.user);}
+    catch(error)
+    {
+      res.send("Error!");
+    }
   }
 );
 //connect to mongodb.
 
 mongoose.connect(
-  "mongodb+srv://vaibhav:808185@cluster0.c5tnw.mongodb.net/sem-7-project?retryWrites=true&w=majority",
+  "mongodb+srv://Shivangis:KingSide@cluster0.y1ibt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
   {
     useUnifiedTopology: true,
     useFindAndModify: false,
     useNewUrlParser: true,
 
-    //  useCreateIndex: true
-  },
-  () => {
-    console.log("connected to mongodb");
-  }
+    useCreateIndex: true
+  }).
+  then(  () => { console.log("Connected!") },
+  err => { console.log("Error!"+err.message) }
 );
 
 const connection = mongoose.connection;
 
 connection.once("open", function () {
-  console.log("MongoDB database connection established successfully");
+  try
+  {console.log("MongoDB database connection established successfully");}
+  catch(err){
+    res.send("Error!");
+  }
 });
 
 //  home route
@@ -108,7 +116,8 @@ app.get('/auth/google/callback',
   {
     failureRedirect: '/login',
     successRedirect:"http://localhost:5000/protected"
-  }),
+  })
+  
 )
 
 //*************************** */
