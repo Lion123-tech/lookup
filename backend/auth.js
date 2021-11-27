@@ -9,7 +9,7 @@ passport.use(
       clientID:
         "215779606617-p5unuegh2jn4imi24r643nttnmoq7vvl.apps.googleusercontent.com",
       clientSecret: "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",
-      callbackURL: "http://localhost:5000/auth/google/callback",
+      callbackURL: "https://git.heroku.com/lookup-backend.git/auth/google/callback",
       passReqToCallback: true,
     },
     function (request, accessToken, refreshToken, profile, done) {
