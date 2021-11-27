@@ -36,6 +36,7 @@ app.use(
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 5, sameSite: "lax" },
     rolling: false,
     resave: false,
+    saveUninitialized: true,
   })
 );
 app.use(passport.initialize());
@@ -129,6 +130,6 @@ app.get("/protected", isloggedin, (req, res) => {
   console.log("test", req.user.loginuser);
 });
 
-app.listen(process.env.PORT, () => {
-  console.log(`app now listening for requests on port ${PORT}`);
+app.listen(3002, () => {
+  console.log(`app now listening for requests on port `);
 });
