@@ -35,7 +35,7 @@ app.use(
     secret: "fdfd",
     cookie: { maxAge: 1000 * 60 * 60 * 24 * 5, sameSite: "lax" },
     rolling: false,
-    resave: false,
+    resave: true,
     saveUninitialized: true,
   })
 );
