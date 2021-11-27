@@ -16,7 +16,7 @@ const allowCrossDomain = function(req, res, next) {
     next();
 };
 const app = express();
-const PORT = process.env.PORT;
+//const PORT = process.env.PORT;
 
 const isloggedin = (req, res, next) => {
   req.user ? next() : res.sendStatus(401);
