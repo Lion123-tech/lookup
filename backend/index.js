@@ -130,6 +130,6 @@ app.get("/protected", isloggedin, (req, res) => {
   console.log("test", req.user.loginuser);
 });
 
-app.listen(3002, () => {
+app.listen(process.env.PORT, () => {
   console.log(`app now listening for requests on port `);
 });
